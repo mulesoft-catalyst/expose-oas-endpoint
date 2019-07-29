@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+	xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+	<munit:config name="swagger-host-basepath-replacer-test-suite.xml" />
+	<munit:test name="swagger-host-basepath-replacer-test-suite-swagger-host-basepath-replacerSub_FlowTest" description="Test" doc:id="e75ceec8-a8b6-49bd-b3a6-a74ab074e192">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to swagger-host-basepath-replacerSub_Flow" doc:id="b3573ece-d866-4a45-a603-a17892b521d7" name="swagger-host-basepath-replacerSub_Flow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="61bcf011-f398-4074-8916-82cf7a74d77b" expression="#[payload]" is="#[MunitTools::notNullValue()]" message="Payload null"/>
+			<munit-tools:verify-call doc:name="Verify call" doc:id="4afea261-8e65-4f9c-88c0-d808cc780e5a" processor="file:write"/>
+		</munit:validation>
+	</munit:test>
+
+</mule>

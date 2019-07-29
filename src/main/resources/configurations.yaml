@@ -1,0 +1,14 @@
+swagger_file_name: api.json
+orgId: 64fe4806-309d-4611-90dd-9e6d22542b4d
+apiName: collection-core-apis
+version: 1.0.21
+dependency_type: zip
+classifier: oas
+basePath: /api
+swagger_file_modified_path: .
+swagger_file_modified_name: swagger.json
+swagger_http_endpoint: swagger.json
+http_listener_config: HTTP_Listener_config
+swagger_flow_initial_status: started
+
+
